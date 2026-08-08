@@ -1,0 +1,259 @@
+/* ===================================
+   1. RESET E VARIÁVEIS GLOBAIS
+   =================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+  --primary: #ff4757;       /* Vermelho vibrante para destaque */
+  --primary-hover: #e84118;
+  --dark-bg: #1e1e24;       /* Fundo escuro */
+  --card-bg: #2b2b36;       /* Fundo dos cartões */
+  --text-color: #f1f2f6;    /* Texto principal */
+  --text-muted: #a4b0be;    /* Texto secundário */
+  --accent: #ffa502;        /* Amarelo/Laranja para preços e detalhes */
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* ===================================
+   2. CABEÇALHO (HEADER)
+   =================================== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: rgba(30, 30, 36, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+header nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: var(--primary);
+}
+
+header nav .btn-nav {
+  background-color: var(--primary);
+  padding: 8px 18px;
+  border-radius: 20px;
+  color: #fff;
+}
+
+header nav .btn-nav:hover {
+  background-color: var(--primary-hover);
+  color: #fff;
+}
+
+/* ===================================
+   3. SEÇÃO HERO (INÍCIO)
+   =================================== */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+              url('https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=1600') no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 52px;
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+.hero h1 span {
+  color: var(--primary);
+}
+
+.hero p {
+  font-size: 20px;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+}
+
+.btn-principal {
+  display: inline-block;
+  padding: 14px 32px;
+  background-color: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn-principal:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-3px);
+}
+
+/* ===================================
+   4. SEÇÃO CARDÁPIO (MENU)
+   =================================== */
+.menu-section {
+  padding: 100px 8% 60px;
+  text-align: center;
+}
+
+.menu-section h2 {
+  font-size: 38px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  margin-bottom: 50px;
+}
+
+.cards-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: var(--card-bg);
+  width: 320px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  text-align: left;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-info {
+  padding: 20px;
+}
+
+.card-info h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.card-info p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  min-height: 60px; /* Alinha o tamanho das descrições */
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.btn-card {
+  padding: 8px 16px;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn-card:hover {
+  background-color: var(--primary-hover);
+}
+
+/* ===================================
+   5. RODAPÉ (FOOTER)
+   =================================== */
+footer {
+  background-color: #121215;
+  text-align: center;
+  padding: 30px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+footer p {
+  margin-bottom: 5px;
+}
+
+/* ===================================
+   6. RESPONSIVIDADE (CELULARES)
+   =================================== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  header nav {
+    margin-top: 15px;
+  }
+
+  header nav a {
+    margin: 0 8px;
+    font-size: 14px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+}
